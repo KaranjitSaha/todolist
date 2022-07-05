@@ -7,7 +7,7 @@ const date = require(__dirname + "/date.js");
 const lodash=require('lodash');
 
 const app = express();
-mongoose.connect('mongodb://localhost:27017/todolistDB').then(() => console.log("connected to DB successfully")).catch((err) => console.log(err));
+mongoose.connect('mongodb+srv://KaranjitSaha:Kota%402020@cluster0.iytsg.mongodb.net/todolistDB').then(() => console.log("connected to DB successfully")).catch((err) => console.log(err));
 
 app.set('view engine', 'ejs');
 
@@ -163,6 +163,12 @@ app.get("/about", function (req, res) {
   res.render("about");
 });
 
-app.listen(3000, function () {
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port);
+
+app.listen(port, function () {
   console.log("Server started on port 3000");
 });
