@@ -1,1 +1,0 @@
-The project is hosted live on heroku using MongoDB Atlas at https://quiet-oasis-00301.herokuapp.com/
